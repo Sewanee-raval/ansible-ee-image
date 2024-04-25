@@ -1,0 +1,10 @@
+---
+version: 3
+dependencies:
+  galaxy: requirements.yml
+  python: requirements.txt
+  system: bindep.txt
+
+additional_build_steps:
+  prepend_galaxy:
+    - ENV ANSIBLE_GALAXY_SERVER="https://old-galaxy.ansible.com/"
