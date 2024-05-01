@@ -1,4 +1,3 @@
----
 collections:
-  - community.general
-  - awx.awx
+- name: community.postgresql
+- name: community.general

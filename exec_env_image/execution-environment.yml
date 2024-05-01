@@ -1,10 +1,19 @@
----
 version: 3
-dependencies:
-  galaxy: requirements.yml
-  python: requirements.txt
-  system: bindep.txt
 
-additional_build_steps:
-  prepend_galaxy:
-    - ENV ANSIBLE_GALAXY_SERVER="https://old-galaxy.ansible.com/"
+images:
+  base_image:
+    name: ghcr.io/ansible-community/community-ee-base:latest
+
+dependencies:
+  ansible_core:
+    package_pip: ansible-core
+  ansible_runner:
+    package_pip: ansible-runner
+  system:
+  - openssh-clients
+  - sshpass
+  - python3-dns
+  galaxy:
+    collections:
+    - name: community.postgresql
+    - name: community.general
